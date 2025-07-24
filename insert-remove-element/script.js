@@ -13,5 +13,4 @@ document.designMode="on"
 let div =document.createElement("div");
 div.setAttribute("class","new-box",) ;
 document.querySelector(".container").append(div);
-
-
+ 
