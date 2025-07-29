@@ -23,10 +23,10 @@ objUser.greeting = function(){
 }
 
 objUser.greetingTwo = function(){
-    console.log(`Hello js user `);
+    console.log(`Hello js user ${this.name}`);
 }
 
-console.log(objUser.greeting);
+console.log(objUser.greeting());
 console.log(objUser.greeting());
 
 
