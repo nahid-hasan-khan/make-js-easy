@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM</title>
+  </head>
+  <body style="background-color: black; color: aliceblue">
+    <ul class="languages">
+      <li>JavaScript</li>
+    </ul>
+  </body>
+  <script>
+    const langList = [
+      "Python",
+      "Java",
+      "C",
+      "C++",
+      "Ruby",
+      "Flatter",
+      "c#",
+      "PHP",
+    ];
+    for (let i = 0; i < langList.length; i++) {
+      const element = langList[i];
+      //   addLanguage();
+      addOptiLang(element);
+    }
+
+    function addLanguage(langName) {
+      const li = document.createElement("li");
+      li.innerHTML = `Created Programming Language Name Is :- ${langName}`;
+      document.querySelector(".languages").appendChild(li);
+    }
+
+    //this is optimize cose this code not travarsing full DOM tree.
+    //here is a method of adding an Element
+    function addOptiLang(langName) {
+      const li = document.createElement("li");
+      li.appendChild(document.createTextNode(`${langName}`));
+      document.querySelector(".languages").appendChild(li);
+    }
+
+    //here is a method of Editing an Element
+    const secondLang = document.querySelector("li:nth-child(2)");
+    // secondLang.innerHTML="Hello"
+    const newLi = document.createElement("li");
+    newLi.textContent = "head";
+    secondLang.replaceWith(newLi);
+
+    //here is a method of Editing an Element
+    const firstChiled = document.querySelector("li:first-child");
+    firstChiled.outerHTML = "<li>TypeScript</li>";
+   
+    //here is a method of Removing an Element
+
+    const lastLang=document.querySelector("li:last-child");
+    lastLang.remove();
+  </script>
+</html>
