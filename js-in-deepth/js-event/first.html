@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript Dom</title>
+  </head>
+  <body style="background-color: #212121; color: aliceblue">
+    <ul class="images">
+      <li>
+        <img
+          id="river"
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKkPPKWy7KBv53QoOAr--IhQeig-PUhDl18A&s"
+          alt=""
+        />
+      </li>
+      <li>
+        <img
+          id="natur"
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvJGrmcCEQzwiZCMqAneRteyJhr1bNB1tj6w&s"
+          alt=""
+        />
+      </li>
+      <li>
+        <img
+          id="bird"
+          src="https://academy.allaboutbirds.org/wp-content/uploads/2015/07/Painted_Bunting_male_Birdhsare_Tim_Hopwood.jpg"
+          alt=""
+        />
+      </li>
+      <li>
+        <img
+          id="mount"
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTG9AnxdyGo1vmPDcfnFjmHi6QOU8tr0el8SQ&s"
+          alt=""
+        />
+      </li>
+      <li><a id="google" style="color: aliceblue" href="">Google</a></li>
+    </ul>
+  </body>
+  <script>
+    //type , timeStamp , defaultPrevented , target , toElement, srcElement , client position:- clientX , clientY , screenX , screenY
+    // key altKey, ctrlKey, shiftKey, keycode
+
+    // document.getElementById("river").addEventListener(
+    //   "click",
+    //   (e) => {
+    //     e.stopPropagation();
+    //     console.log(e);
+
+    //     // alert("River Clicked");
+    //   },
+    //   false
+    // );
+
+    document.getElementById("google").addEventListener(
+      "click",
+      (e) => {
+        e.preventDefault();
+      },
+      false
+    );
+
+    const images = document.querySelector(".images").addEventListener(
+      "click",
+      (e) => {
+        if (e.target.tagName === "IMG" || "A") {
+          let removeIt = e.target.parentNode;
+          removeIt.remove()
+        //   removeIt.parentNode.removeChild(removeIt);
+        }
+      },
+      false
+    );
+  </script>
+</html>
